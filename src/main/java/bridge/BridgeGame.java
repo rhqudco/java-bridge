@@ -20,4 +20,19 @@ public class BridgeGame {
      */
     public void retry() {
     }
+
+    public static void gameStart() {
+        String userInput = InputView.readBridgeSize();
+        try {
+            ExceptionCase.validateBridgeSize(userInput);
+            Bridge.BRIDGE.setSize(Integer.parseInt(userInput));
+        } catch (IllegalArgumentException ignored) {
+        }
+    }
+
+    public static void test() {
+        do {
+            gameStart();
+        } while (Bridge.BRIDGE.getSize() < 3 || Bridge.BRIDGE.getSize() > 20);
+    }
 }
