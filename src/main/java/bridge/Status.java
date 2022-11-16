@@ -1,11 +1,10 @@
 package bridge;
 
-public enum Bridge {
+public enum Status {
     BRIDGE(0);
-
     private int size;
 
-    Bridge(int size) {
+    Status(int size) {
         this.size = size;
     }
 

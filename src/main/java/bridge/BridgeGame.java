@@ -21,18 +21,18 @@ public class BridgeGame {
     public void retry() {
     }
 
-    public static void gameStart() {
+    public static void valueCheck() {
         String userInput = InputView.readBridgeSize();
         try {
             ExceptionCase.validateBridgeSize(userInput);
-            Bridge.BRIDGE.setSize(Integer.parseInt(userInput));
+            Status.BRIDGE.setSize(Integer.parseInt(userInput));
         } catch (IllegalArgumentException ignored) {
         }
     }
 
-    public static void test() {
+    public static void gameStart() {
         do {
-            gameStart();
-        } while (Bridge.BRIDGE.getSize() < 3 || Bridge.BRIDGE.getSize() > 20);
+            valueCheck();
+        } while (Status.BRIDGE.getSize() < 3 || Status.BRIDGE.getSize() > 20);
     }
 }
